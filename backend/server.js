@@ -30,7 +30,7 @@ db.connect((erro) => {
       nome varchar(70) not null,
       nivel varchar(50) unique not null,
       horario varchar(50) not null,
-      telefone varchar(100) not null,.
+      telefone varchar(100) not null,
       ativo boolean default true
     );
     `;
