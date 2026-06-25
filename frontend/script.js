@@ -106,7 +106,7 @@ async function carragarEstatisticas() {
         </div>
         </div>
         `
-    } catch(erro) {
+    } catch (erro) {
         console.log("Erro ao carregar", erro)
     }
 }
@@ -115,20 +115,20 @@ async function conferirAdm(event) {
     event.preventDefault();
     const senha = document.getElementById("senha").value;
 
-    try{
-        const resposta = await fetch (`${API}/admin`, {
+    try {
+        const resposta = await fetch(`${API}/admin`, {
             method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({senha})
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ senha })
         });
         const dados = await resposta.json();
-        if(!resposta.ok) {
+        if (!resposta.ok) {
             alert(dados.erro)
             return;
         }
         sessionStorage.setItem("admin_logado", "true");
         verificar();
-    } catch(erro) {
+    } catch (erro) {
         console.log("Erro na autenticação", erro)
     }
 }
